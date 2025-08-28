@@ -5,7 +5,11 @@ scenario: multi-task-processing
 spec:
   template:
     - role: "system"
-      content: "{{ ?instruction }}"
+      content: |
+        Perform multiple tasks at once: Detect language and translate to English.
+        Respond in the following format:
+        Language: <detected_language>
+        Converted to English: <translated_text>
     - role: "user"
       content: "Take {{ ?user_input }} from here"
   defaults:
