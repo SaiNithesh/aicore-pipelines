@@ -1,0 +1,18 @@
+
+name: text_expansion
+version: 1.1.1
+scenario: text-expansion
+spec:
+  template:
+    - role: "system"
+      content: |
+        Expand the following short text into a detailed explanation.
+        Return output as:
+        Expanded Text: {{ expanded_output }}
+    - role: "user"
+      content: "Text: {{ ?short_text }}"
+
+  additionalFields:
+    isDev: true
+    validations:
+      required: true

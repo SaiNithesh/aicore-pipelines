@@ -1,0 +1,17 @@
+# Prompt Template (Declarative)
+name: text_summary
+version: 1.1.1
+scenario: text-summarization
+spec:
+  template:
+    - role: "system"
+      content: |
+        Summarize the following text.
+        Respond in the following format:
+        Summary: {{ summary_output }}
+    - role: "user"
+      content: "Text: {{ ?input_text }}"
+  additionalFields:
+    isDev: true
+    validations:
+      required: true
